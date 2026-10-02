@@ -275,3 +275,6 @@
 .transit-list li{color:var(--ink)}
 .transit-list li::marker{color:var(--lime-ink)}
 @media (max-width:700px){.transit-list{columns:1}}
+/* Location pages: "Why People Call" sits on a dark photo, same treatment as the related panel */
+.reasons-panel .checks li{box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.18)}
+.reasons-panel .sec-head .answer{color:var(--white)}
