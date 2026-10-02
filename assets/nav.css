@@ -201,3 +201,16 @@
 @media (hover:hover) and (pointer:fine){ .sec .city-list a:not(.hub):hover{background:#2C4421;box-shadow:inset 0 0 0 2px var(--lime)} }
 /* cards with an icon badge need the homepage's top padding so the badge clears the title */
 .svc-body-flat{padding:40px 14px 14px}
+
+/* schedule row: a photo fills whatever height the seasons column leaves above the cost card */
+.mow{align-items:stretch}
+.cost-side{display:flex;flex-direction:column;gap:16px;min-height:100%}
+.cost-side figure{flex:1 1 auto;margin:0;min-height:220px;border-radius:var(--r-lg);overflow:hidden;position:relative}
+.cost-side figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cost-side .cost-card{align-self:stretch}
+@media (max-width:1100px){ .cost-side figure{flex:none;aspect-ratio:16/9;min-height:0} }
+
+/* related services on the homepage areas-panel treatment: photo ground, no mask */
+.related-panel .related-links,.related-panel .areas-sub{position:relative}
+.related-panel .areas-sub{color:var(--white);text-shadow:0 1px 3px rgba(0,0,0,.55),0 2px 22px rgba(0,0,0,.45)}
+.related-panel .city-list a:not(.hub){background:rgba(18,22,14,.9);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.18)}
