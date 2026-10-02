@@ -269,3 +269,9 @@
 .sitemap a{display:flex;align-items:center;min-height:44px;color:#2A3122;font-weight:600;font-size:15px;text-decoration:none}
 .post-article.legal{max-width:880px}
 @media (hover:hover) and (pointer:fine){ .sitemap a:hover{color:var(--lime-ink)} }
+/* Location pages: Public Transportation as a plain bulleted list */
+.transit-list{margin:8px 0 0;padding:0 0 0 22px;columns:2;column-gap:56px;list-style:disc}
+.transit-list li{break-inside:avoid;padding:6px 0;font-size:1.0625rem;line-height:1.5}
+.transit-list li{color:var(--ink)}
+.transit-list li::marker{color:var(--lime-ink)}
+@media (max-width:700px){.transit-list{columns:1}}
