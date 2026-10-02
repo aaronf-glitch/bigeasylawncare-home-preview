@@ -215,3 +215,13 @@
 .related-panel .areas-sub{color:var(--white);text-shadow:0 1px 3px rgba(0,0,0,.55),0 2px 22px rgba(0,0,0,.45)}
 .related-panel .city-list a:not(.hub){background:rgba(18,22,14,.9);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.18)}
 .related-panel .guides{position:relative}
+
+/* hub (parent) pages: child chips in the hero, child cards straight after it */
+.hub-chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 0;padding:0;list-style:none;text-shadow:none}
+.hub-chips a{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;background:rgba(18,22,14,.9);color:var(--white);font-weight:600;font-size:15px;text-decoration:none;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.18);transition:background-color .15s ease,box-shadow .15s ease}
+.hub-chips a::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime)}
+.svc-grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.hub-also{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:22px}
+@media (hover:hover) and (pointer:fine){ .hub-chips a:hover{background:#2C4421;box-shadow:inset 0 0 0 2px var(--lime)} }
+@media (max-width:640px){ .svc-grid-2{grid-template-columns:minmax(0,1fr)} }
+@media (prefers-reduced-motion:reduce){ .hub-chips a{transition:none} }
