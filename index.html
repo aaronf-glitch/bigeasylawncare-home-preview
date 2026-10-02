@@ -497,6 +497,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var
   .js .rv,.js .rv-img{transform:none;clip-path:none;transition:none}
   .js .hero .eyebrow,.js .hero h1,.js .hero .lede,.js .hero-row>div{animation:none}
 }
+
+/* LeadConnector form_embed.js parks the inline form off-screen as if it were a popup; hold it in place (Painters handoff 5) */
+.form-wrap .ep-iFrameContainer,.form-wrap .ep-wrapper{position:static!important;width:100%!important;left:auto!important;top:auto!important;transform:none!important}
+.form-wrap iframe{width:100%!important;position:static!important;left:auto!important;top:auto!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
 </style>
 </head>
 <body>

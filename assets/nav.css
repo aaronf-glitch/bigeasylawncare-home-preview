@@ -139,3 +139,7 @@
 
 /* a link inside a check pill gets the full 44px tap height without growing the pill */
 .checks li a{display:inline-flex;align-items:center;min-height:44px;margin:-12px 0;color:inherit;text-underline-offset:3px}
+
+/* LeadConnector form_embed.js parks the inline form off-screen as if it were a popup; hold it in place (Painters handoff 5) */
+.form-wrap .ep-iFrameContainer,.form-wrap .ep-wrapper{position:static!important;width:100%!important;left:auto!important;top:auto!important;transform:none!important}
+.form-wrap iframe{width:100%!important;position:static!important;left:auto!important;top:auto!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
