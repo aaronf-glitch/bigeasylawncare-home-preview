@@ -96,3 +96,46 @@
 @media (max-width:1100px){
   .split-media,.split-media.tall{height:auto;aspect-ratio:4/3;min-height:0}
 }
+
+/* our services: six maintenance cards, three per row */
+.svc-grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+
+/* contact: reach-us cards beside the map, same height */
+.reach{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(16px,2.4vw,32px);align-items:stretch}
+.reach .info-cards{align-content:start}
+.reach .info-map{aspect-ratio:auto;height:100%;min-height:340px}
+.info h3{font:700 15px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--lime-ink);margin:4px 0 8px}
+.info p{margin:0;color:var(--ink);font-weight:600;font-size:17px;line-height:1.5}
+
+/* blog: featured guide and topic lists */
+.feature-post{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(20px,3vw,44px);align-items:center;padding:12px;border-radius:var(--r-xl);background:var(--white);box-shadow:inset 0 0 0 1.5px var(--line);text-decoration:none;color:var(--ink);transition:box-shadow .2s ease}
+.feature-post figure{margin:0;border-radius:calc(var(--r-xl) - 12px);overflow:hidden;aspect-ratio:3/2}
+.feature-post figure img{width:100%;height:100%;object-fit:cover;display:block}
+.feature-post>div{display:grid;gap:14px;padding:12px clamp(8px,2vw,28px) 12px 0;justify-items:start}
+.feature-post time,.post time{font-size:14px;font-weight:600;color:var(--muted)}
+.feature-post h3{font:800 clamp(24px,2.2vw,34px)/1.15 var(--display);letter-spacing:-.015em;margin:0}
+.feature-post p{margin:0;font-size:17px;line-height:1.65;color:#2A3122}
+.topics{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.topic{flex:0 1 calc((100% - 32px)/3);padding:26px;border-radius:var(--r-lg);background:var(--white);box-shadow:inset 0 0 0 1.5px var(--line)}
+.topic h3{font:700 21px/1.2 var(--display);margin:0 0 12px}
+.topic ul{list-style:none;margin:0;padding:0;display:grid}
+.topic li+li{box-shadow:inset 0 1px 0 var(--line)}
+.topic a{display:flex;align-items:center;min-height:44px;padding:8px 0;color:#2A3122;font-weight:600;font-size:15px;line-height:1.4;text-decoration:none}
+@media (hover:hover) and (pointer:fine){
+  .feature-post:hover{box-shadow:inset 0 0 0 1.5px var(--lime)}
+  .topic a:hover{color:var(--lime-ink)}
+}
+@media (max-width:1100px){
+  .svc-grid-3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .reach,.feature-post{grid-template-columns:minmax(0,1fr)}
+  .feature-post>div{padding:4px 12px 16px}
+  .topic{flex-basis:calc((100% - 16px)/2)}
+}
+@media (max-width:640px){
+  .svc-grid-3{grid-template-columns:minmax(0,1fr)}
+  .topic{flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){ .feature-post{transition:none} }
+
+/* a link inside a check pill gets the full 44px tap height without growing the pill */
+.checks li a{display:inline-flex;align-items:center;min-height:44px;margin:-12px 0;color:inherit;text-underline-offset:3px}
