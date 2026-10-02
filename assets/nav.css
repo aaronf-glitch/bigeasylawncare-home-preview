@@ -143,3 +143,38 @@
 /* LeadConnector form_embed.js parks the inline form off-screen as if it were a popup; hold it in place (Painters handoff 5) */
 .form-wrap .ep-iFrameContainer,.form-wrap .ep-wrapper{position:static!important;width:100%!important;left:auto!important;top:auto!important;transform:none!important}
 .form-wrap iframe{width:100%!important;position:static!important;left:auto!important;top:auto!important;opacity:1!important;visibility:visible!important;pointer-events:auto!important}
+
+/* blog pager: rounded pills, the current page in lime */
+.post-page[hidden]{display:none}
+.post-page+.post-page{margin-top:16px}
+.pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px;margin-top:clamp(28px,3vw,44px)}
+.pager ol{list-style:none;margin:0;padding:0;display:flex;gap:8px}
+.pg-num,.pg-step{display:inline-flex;align-items:center;justify-content:center;min-width:48px;min-height:48px;padding:0 18px;border-radius:999px;background:var(--white);box-shadow:inset 0 0 0 1.5px var(--line);color:var(--ink);font:700 16px/1 var(--display);text-decoration:none;transition:background-color .15s ease,box-shadow .15s ease}
+.pg-num{padding:0}
+.pg-num[aria-current="page"]{background:var(--lime);box-shadow:none}
+.pg-step[aria-disabled="true"]{opacity:.45;pointer-events:none}
+@media (hover:hover) and (pointer:fine){ .pg-num:not([aria-current]):hover,.pg-step:hover{box-shadow:inset 0 0 0 1.5px var(--lime);background:var(--cream)} }
+@media (prefers-reduced-motion:reduce){ .pg-num,.pg-step{transition:none} }
+
+/* blog: posts beside a sticky sidebar (Painters blog pattern) */
+.blog-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,340px);gap:clamp(20px,2.6vw,40px);align-items:start}
+.blog-layout .post-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.blog-layout .post-grid>.post{flex:none}
+.blog-side{position:sticky;top:110px;display:grid;gap:16px}
+.blog-side .side-card h3,.blog-side .side-call h3{font:700 15px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--lime-ink);margin:0 0 12px}
+.blog-side .side-call h3{color:var(--lime-2);font:800 22px/1.2 var(--display);letter-spacing:0;text-transform:none}
+.blog-search{display:flex;gap:8px}
+.blog-search input{flex:1;min-width:0;min-height:48px;padding:0 18px;border:0;border-radius:999px;background:var(--cream);box-shadow:inset 0 0 0 1.5px var(--line);font:500 16px/1 var(--body);color:var(--ink)}
+.blog-search input:focus{outline:2px solid var(--lime);outline-offset:2px}
+.blog-search button{flex:none;width:48px;height:48px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:var(--ink);cursor:pointer}
+.blog-search button svg{width:20px;height:20px}
+.cat-list a b{flex:none;min-width:30px;height:26px;padding:0 8px;border-radius:999px;display:grid;place-items:center;background:var(--cream);color:var(--lime-ink);font:700 13px/1 var(--body)}
+.blog-side .cat-list a::after{content:none}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (max-width:1100px){
+  .blog-layout{grid-template-columns:minmax(0,1fr)}
+  .blog-side{position:static;grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:640px){
+  .blog-layout .post-grid,.blog-side{grid-template-columns:minmax(0,1fr)}
+}
