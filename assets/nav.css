@@ -78,8 +78,8 @@
 }
 
 /* full-bleed inner hero: the homepage hero shape with a photograph, no overlay */
-.ihero-full{min-height:min(82svh,760px)}
-.ihero-full .hero-media img{object-position:center 40%}
+.ihero-full{min-height:min(100svh,940px)}
+.ihero-full .hero-media img{object-position:center 30%}
 .ihero-full .hero-inner{max-width:none;gap:18px}
 .ihero-full .hero-inner>*{max-width:820px}
 .ihero-full .crumbs,.ihero-full .crumbs a{color:var(--white)}
